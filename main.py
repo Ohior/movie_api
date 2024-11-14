@@ -4,6 +4,7 @@ from re import search, sub
 from bs4 import BeautifulSoup
 from requests import get
 from model.movie_model import MovieModel, MoviesPageModel
+from scrapers.coolmovies_scrapers import getCoolMovies, getCoolMovieInfo, getCoolMoviesRandom
 from scrapers.fzmovies_scraper import getFZmovies
 from utils.constants import NIJA_ROCK_URL
 
@@ -83,7 +84,10 @@ from utils.constants import NIJA_ROCK_URL
 
 
 async def mainExecution():
-    await getFZmovies()
+    # await getFZmovies()
+    # await getCoolMovies()
+    # await getCoolMovieInfo()
+    await getCoolMoviesRandom()
 
 if __name__ == '__main__':
     asyncio.run(mainExecution())
